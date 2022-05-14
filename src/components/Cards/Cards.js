@@ -5,9 +5,9 @@ export default function Cards({ result }) {
   return (
     <>
       <div className="flex justify-center gap-10 items-center mt-5 flex-wrap mb-5">
-        {result.map((item) => (
+        {result?.map((item) => (
           <>
-            <div className="flex flex-col rounded-lg border border-gray-200 shadow-lg p-5 md:w-96 w-[21rem] break-words space-y-2 h-full">
+            <div className="flex flex-col rounded-lg border border-gray-200 shadow-lg p-5 md:w-96 w-[21rem] break-words space-y-2 h-full" key = {item}>
               <div className="flex justify-center items-center">
                 <ReactPlayer
                   controls
@@ -19,9 +19,9 @@ export default function Cards({ result }) {
               <h1 className="text-xl font-bold">{item.heading}</h1>
               <div className="flex gap-1">
                 <h1 className="text-lg font-semibold mt-1">Tags:</h1>
-                {item.tags.map((tagItem) => (
+                {item.tags?.map((tagItem) => (
                   <>
-                    <p className=" bg-red-500 rounded-md text-white md:p-2 p-1 text-sm ">
+                    <p className=" bg-red-500 rounded-md text-white md:p-2 p-1 text-sm " key = {tagItem}>
                       {tagItem}
                     </p>
                   </>
